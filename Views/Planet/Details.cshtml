@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = string.Format("The {0}",Model.Body);
+
+}
+
+@model _14068570___Solar_System.Models.Planet
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div id="planet-name">
+        @Model.Body
+    </div>
+    <div id="planet-image" >
+        <img src="@Model.ImagePath" />
+    </div>
+    <div id="planet-description">
+        @Model.Description
+    </div>
+</body>
+</html>

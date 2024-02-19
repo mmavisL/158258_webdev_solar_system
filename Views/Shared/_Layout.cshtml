@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - The Solar System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css/StyleSheet1.css")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("The Solar System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-nav flex-grow-1"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Planets", "Index", "Planet", new { area = "" }, new { @class = "nav-link" })</li>       
+                </ul>
+            </div>
+        </div>
+    </nav> 
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <footer>
+        <div class="div-links">
+
+        <p><a class="mail-to" href="mailto:someone@example.com">Click here to email me</a></p>
+        <p>
+            <a href="https://validator.w3.org/docs/users.html#Calling"> W3C Validator API</a>
+            <a href="https://jigsaw.w3.org/css-validator/manual.html">CSS Validator</a>
+        </p>
+        </div>
+        <p>&copy; @DateTime.Now.Year - Name: Mengdi Liu | Student ID: 14068570</p>
+    </footer>
+</body>
+</html>

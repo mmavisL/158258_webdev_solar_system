@@ -1,0 +1,142 @@
+﻿
+p {
+    Color: grey;
+    font-size: medium;
+    line-height: 100%;
+    margin-bottom: 6px;
+}
+
+tr, th {
+    border-bottom: 1px solid var(--bs-primary);
+}
+
+th {
+    color: var(--bs-primary);
+}
+
+td {
+    width: 33%;
+}
+
+tr a {
+    text-decoration: none;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    background: white;
+    position: relative;
+    bottom: 0;
+    padding: 10px 0;
+}
+
+
+:root {
+    --bs-primary: darkslategrey;
+}
+
+.navbar{
+    margin-bottom:15px;
+}
+
+.bg-dark {
+    background-color: var(--bs-primary) !important;
+}
+.nav-item {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+}
+
+.nav-link {
+    font-size:22px;
+}
+
+.navbar-brand {
+    font-size: 48px;
+}
+
+.nav-item:hover {
+    background-color: #111111;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-primary {
+    background: var(--bs-primary);
+}
+
+
+.body-content {
+    min-height: calc(100vh - 250px);
+}
+
+
+.homepageTitle {
+    font-family: Arial;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.mail-to{
+    color:var(--bs-primary);
+
+}
+
+.mail-to:hover{
+    color:lightgray;
+}
+
+.search, .filter, .sort{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+:is(.search, .filter, .sort) label {
+    white-space: nowrap;
+}
+
+.config {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+#planet-name {
+    font-size: 26px;
+    color: var(--bs-primary);
+    font-weight: 700;
+    text-align: left;
+    width: 100%;
+}
+
+.img img{
+    height:calc(100vh - 300px);
+}
+
+#planet-image{
+    width:100%;
+    padding: 10px 0;
+}
+
+#planet-image > img{
+    width:600px;
+}
+
+.div-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}

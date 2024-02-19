@@ -1,0 +1,86 @@
+﻿
+
+@{
+    ViewBag.Title = "The Planets";
+}
+
+@model IEnumerable<_14068570___Solar_System.Models.Planet>
+
+<main>
+    <div class="config">
+        <div>
+            @using (Html.BeginForm("Index", "Planet", FormMethod.Get, new { @class = "search" }))
+            {
+                @Html.TextBox("search", null, new { @class = "form-control" })
+                <button type="submit" class="btn btn-primary">Search</button>
+            }
+        </div>
+        <div>
+            @using (Html.BeginForm("Index", "Planet", FormMethod.Get, new { @id = "filter", @class = "filter" }))
+            {
+                <label>Filer By Category:</label>
+                @Html.DropDownList("category", null, "All", new { @id = "select-filter", @class = "form-select" })
+            }
+
+        </div>
+        <div>
+            @using (Html.BeginForm("Index", "Planet", FormMethod.Get, new { @id = "sort", @class = "sort" }))
+            {
+                <label>Sort By:</label>
+                @Html.DropDownList("sortBy", null, new { @id = "select-sort", @class = "form-select" })
+            }
+        </div>
+    </div>
+    <div class="row">
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Body)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Radius)
+                </th>
+
+                <th>
+                    Category
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Body, "Details", new { id = item.Id })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Radius)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name) 
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</main>
+<script>
+
+    var filterForm = document.getElementById("filter");
+    var filterDropDown = document.getElementById("select-filter");
+    filterDropDown.addEventListener("change", onFilter);
+
+    function onFilter() {
+        filterForm.submit()
+    }
+
+
+    var sortForm = document.getElementById("sort");
+    var sortDropDown = document.getElementById("select-sort");
+    sortDropDown.addEventListener("change", onSort);
+
+    function onSort() {
+        sortForm.submit()
+    }
+
+
+</script>
